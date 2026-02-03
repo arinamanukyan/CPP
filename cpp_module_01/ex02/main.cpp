@@ -6,22 +6,23 @@
 /*   By: arina <arina@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 21:11:12 by arimanuk          #+#    #+#             */
-/*   Updated: 2026/01/31 17:17:05 by arina            ###   ########.fr       */
+/*   Updated: 2026/01/31 20:11:06 by arina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+#include <ctype.h>
 
 int main()
 {
-	std::string name;
-	int n;
-	std::cout << "Enter name zombie-> ";
-	std::cin >> name;
-	std::cout << "Enter count of zombies-> ";
-	std::cin >> n;
-	std::cout << std::endl;
-	Zombie z1;
-	Zombie *zmb = z1.zombieHorde(n, name);
-	delete[] zmb;
+	std::string str = "HI THIS IS BRAIN";
+	std::string *stringPTR = &str;
+	std::string &stringREF = str;
+	std::cout << "Memory address of the string -> " << &str << std::endl;
+	std::cout << "Memory address held by stringPTR -> " << stringPTR << std::endl;
+	std::cout << "Memory address held by stringREF -> " << &stringREF << std::endl << std::endl;
+	std::cout << "Value of the string -> " << str << std::endl;
+	std::cout << "Value pointed to by stringPTR -> " << *stringPTR << std::endl;
+	std::cout << "Value pointed to by stringREF -> " << stringREF << std::endl;
+	return (0);
 }

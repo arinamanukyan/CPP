@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arina <arina@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 20:53:08 by arimanuk          #+#    #+#             */
-/*   Updated: 2026/01/31 16:33:59 by arina            ###   ########.fr       */
+/*   Created: 2026/02/01 01:15:24 by arina             #+#    #+#             */
+/*   Updated: 2026/02/01 19:36:28 by arina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-void Zombie::announce(std::string name)
+void HumanA::attack()
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << this->name << " attacks with their ";
+    std::cout << this->weapon.getType() << std::endl; 
 }
 
-Zombie::Zombie()
+HumanA::HumanA(std::string name, Weapon& weapon) : weapon(weapon)
 {
-	std::cout << "Default constructor called" << std::endl;
+    this->name = name;
+    std::cout << "HumanA constructor with params was called" << std::endl;
 }
-Zombie::~Zombie()
+
+HumanA::~HumanA()
 {
-	std::cout << "Destructor called" << std::endl;
+    std::cout << "HumanA destructor called" << std::endl;
 }

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arina <arina@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 20:53:08 by arimanuk          #+#    #+#             */
-/*   Updated: 2026/01/31 16:33:59 by arina            ###   ########.fr       */
+/*   Created: 2026/02/01 01:15:54 by arina             #+#    #+#             */
+/*   Updated: 2026/02/01 19:10:05 by arina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
+#include <iostream>
+#include <ctype.h>
 
-void Zombie::announce(std::string name)
+class Weapon
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-Zombie::Zombie()
-{
-	std::cout << "Default constructor called" << std::endl;
-}
-Zombie::~Zombie()
-{
-	std::cout << "Destructor called" << std::endl;
-}
+    private:
+        std::string type;
+    public:
+        const std::string &getType() const;
+        void setType(std::string value);
+    Weapon();
+    Weapon(std::string str);
+    ~Weapon();
+};

@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arina <arina@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 20:53:08 by arimanuk          #+#    #+#             */
-/*   Updated: 2026/01/31 16:33:59 by arina            ###   ########.fr       */
+/*   Created: 2026/02/01 01:15:20 by arina             #+#    #+#             */
+/*   Updated: 2026/02/01 18:52:30 by arina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-void Zombie::announce(std::string name)
+int main(int argc, char **argv)
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-Zombie::Zombie()
-{
-	std::cout << "Default constructor called" << std::endl;
-}
-Zombie::~Zombie()
-{
-	std::cout << "Destructor called" << std::endl;
+    
 }
