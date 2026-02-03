@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   header.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/01 01:15:20 by arina             #+#    #+#             */
-/*   Updated: 2026/02/03 21:12:29 by arimanuk         ###   ########.fr       */
+/*   Created: 2026/02/03 20:46:58 by arimanuk          #+#    #+#             */
+/*   Updated: 2026/02/03 21:10:27 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.hpp"
-
-int main(int argc, char **argv)
-{
-    if (argc == 3)
-	{
-		std::string filename = argv[1];
-		std::string s1 = argv[2];
-		std::string s2 = argv[3];
-		if (s1.length() == 0)
-			return 1;
-
-		std::ifstream infile(filename.c_str());
-		if (!infile)
-			return 1;
-	}
-	else
-		std::cout << "Error" << std::endl;
-}
+#pragma once
+#include <iostream>
+#include <ctype.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <fstream>
