@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arina <arina@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 01:15:20 by arina             #+#    #+#             */
-/*   Updated: 2026/02/03 21:12:29 by arimanuk         ###   ########.fr       */
+/*   Updated: 2026/02/04 14:24:05 by arina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int argc, char **argv)
 {
-    if (argc == 3)
+    if (argc == 4)
 	{
 		std::string filename = argv[1];
 		std::string s1 = argv[2];
@@ -25,6 +25,34 @@ int main(int argc, char **argv)
 		std::ifstream infile(filename.c_str());
 		if (!infile)
 			return 1;
+		std::string content;
+		std::string line;
+		while (std::getline(infile, line))
+		{
+			content += line;
+			if (!infile.eof())
+				content += '\n';
+		}
+		infile.close();
+		std::string result;
+		size_t i = 0;
+		while (i < content.length())
+		{
+			if (content.compare(i, s1.length(), s1) == 0)
+			{
+				result += s2;
+				i += s1.length();
+			}
+			else
+			{
+				result += content[i];
+				i++;
+			}
+		}
+		std::ofstream outfile((filename + ".replace").c_str());
+		if (!outfile)
+			return 1;
+		outfile << result;
 	}
 	else
 		std::cout << "Error" << std::endl;

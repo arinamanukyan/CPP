@@ -6,11 +6,11 @@
 #    By: arina <arina@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 20:06:13 by arina             #+#    #+#              #
-#    Updated: 2026/02/04 14:06:50 by arina            ###   ########.fr        #
+#    Updated: 2026/02/04 14:30:48 by arina            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = sed_is_for_losers
+NAME = harl
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
