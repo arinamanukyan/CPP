@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/04 14:31:48 by arina             #+#    #+#             */
-/*   Updated: 2026/02/04 19:24:13 by arimanuk         ###   ########.fr       */
+/*   Created: 2026/02/01 01:15:20 by arina             #+#    #+#             */
+/*   Updated: 2026/02/04 20:16:32 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
+#include "Harl.hpp"
 
-class Harl
+int main(int argc, char** argv)
 {
-	private:
-		void debug(void);
-		void info(void);
-		void warning(void);
-		void error(void);
-	public:
-		void complain(std::string level);
-	Harl();
-	~Harl();
-};
+	Harl obj;
+	std::string level;
+
+	if (argc == 2)
+	{
+		level = argv[1];
+		obj.complain(level);
+	}
+	else
+		std::cout << "Enter correct level" << std::endl;
+}

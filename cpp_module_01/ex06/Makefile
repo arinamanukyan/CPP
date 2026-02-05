@@ -6,11 +6,11 @@
 #    By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 20:06:13 by arina             #+#    #+#              #
-#    Updated: 2026/02/04 19:33:12 by arimanuk         ###   ########.fr        #
+#    Updated: 2026/02/04 20:07:33 by arimanuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harl
+NAME = harl_filter
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
