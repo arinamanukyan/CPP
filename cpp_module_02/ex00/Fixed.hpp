@@ -6,7 +6,7 @@
 /*   By: arina <arina@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 15:53:14 by arina             #+#    #+#             */
-/*   Updated: 2026/02/07 17:16:06 by arina            ###   ########.fr       */
+/*   Updated: 2026/02/23 20:51:56 by arina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ class Fixed
 {
     private:
         int raw;
-        static const int numik = 8;
+        static const int fractional_bits = 8;
 
     public:
         Fixed();

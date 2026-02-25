@@ -6,7 +6,7 @@
 /*   By: arina <arina@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 15:53:14 by arina             #+#    #+#             */
-/*   Updated: 2026/02/21 15:21:57 by arina            ###   ########.fr       */
+/*   Updated: 2026/02/24 22:03:25 by arina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Fixed
 {
     private:
         int raw;
-        static const int numik = 8;
+        static const int fractional_bits = 8;
 
     public:
         Fixed();
@@ -37,14 +37,18 @@ class Fixed
         bool operator<=(const Fixed& other) const;
         bool operator==(const Fixed& other) const;
         bool operator!=(const Fixed& other) const;
-        Fixed operator+(const Fixed& other) const;
-        Fixed operator-(const Fixed& other) const;
-        Fixed operator*(const Fixed& other) const;
-        Fixed operator/(const Fixed& other) const;
+        const Fixed operator+(const Fixed& other) const;
+        const Fixed operator-(const Fixed& other) const;
+        const Fixed operator*(const Fixed& other) const;
+        const Fixed operator/(const Fixed& other) const;
         Fixed& operator++();  
-        Fixed  operator++(int);
+        const Fixed  operator++(int);
         Fixed& operator--();  
-        Fixed  operator--(int);
+        const Fixed  operator--(int);
+        static Fixed& max(Fixed& a, Fixed& b);
+        static Fixed& max(const Fixed& a, const Fixed& b);
+        static Fixed& min(Fixed& a, Fixed& b);
+        static Fixed& min(const Fixed& a, const Fixed& b);
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& obj);

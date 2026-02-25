@@ -6,7 +6,7 @@
 /*   By: arina <arina@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 15:53:17 by arina             #+#    #+#             */
-/*   Updated: 2026/02/21 15:26:37 by arina            ###   ########.fr       */
+/*   Updated: 2026/02/24 22:10:00 by arina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,47 +21,39 @@ std::ostream& operator<<(std::ostream& os, const Fixed& obj)
 Fixed::Fixed()
 {
 	this->raw = 0;
-	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int value)
 {
-	std::cout << "Int constructor called" << std::endl;
-	this->raw = value * 256;
+	this->raw = value << this->fractional_bits;
 }
 
 Fixed::Fixed(const float value)
 {
-	std::cout << "Float constructor called" << std::endl;
-	this->raw = roundf(value * 256);
+	this->raw = roundf(value * (1 << this->fractional_bits));
 }
 
 Fixed::Fixed(const Fixed& other)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	this->raw = other.raw;
 }
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	this->raw = other.getRawBits();
 	return (*this);
 }
 
-Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-}
+Fixed::~Fixed() {}
 
 float Fixed::toFloat(void) const
 {
-	return (raw / 256);
+    return (static_cast<float>(this->fractional_bits) / (1 << this->fractional_bits));
 }
 
 int Fixed::toInt(void) const
 {
-	return (raw / 256);
+    return (this->fractional_bits >> this->fractional_bits);
 }
 
 void Fixed::setRawBits(int const raw)
@@ -74,14 +66,64 @@ int Fixed::getRawBits(void) const
 	return (raw);
 }
 
-bool Fixed::operator>(const Fixed& o) const  { return raw >  o.raw; }
-bool Fixed::operator<(const Fixed& o) const  { return raw <  o.raw; }
-bool Fixed::operator>=(const Fixed& o) const { return raw >= o.raw; }
-bool Fixed::operator<=(const Fixed& o) const { return raw <= o.raw; }
-bool Fixed::operator==(const Fixed& o) const { return raw == o.raw; }
-bool Fixed::operator!=(const Fixed& o) const { return raw != o.raw; }
+Fixed& Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a.toFloat() > b.toFloat())
+		return a;
+	return b;
+}
 
-Fixed Fixed::operator+(const Fixed& o) const { return Fixed(this->toFloat() + o.toFloat()); }
-Fixed Fixed::operator-(const Fixed& o) const { return Fixed(this->toFloat() - o.toFloat()); }
-Fixed Fixed::operator*(const Fixed& o) const { return Fixed(this->toFloat() * o.toFloat()); }
-Fixed Fixed::operator/(const Fixed& o) const { return Fixed(this->toFloat() / o.toFloat()); }
+Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	return Fixed::max(const_cast<Fixed&> (a), const_cast<Fixed&>(b));
+}
+
+Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a.toFloat() < b.toFloat())
+		return a;
+	return b;
+}
+
+Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+{
+	return Fixed::min(const_cast<Fixed&> (a), const_cast<Fixed&>(b));
+}
+
+bool Fixed::operator>(const Fixed& o) const  { return this->raw > o.raw; }
+bool Fixed::operator<(const Fixed& o) const  { return this->raw < o.raw; }
+bool Fixed::operator>=(const Fixed& o) const { return this->raw >= o.raw; }
+bool Fixed::operator<=(const Fixed& o) const { return this->raw <= o.raw; }
+bool Fixed::operator==(const Fixed& o) const { return this->raw == o.raw; }
+bool Fixed::operator!=(const Fixed& o) const { return this->raw != o.raw; }
+
+const Fixed Fixed::operator+(const Fixed& o) const { return Fixed(this->toFloat() + o.toFloat()); }
+const Fixed Fixed::operator-(const Fixed& o) const { return Fixed(this->toFloat() - o.toFloat()); }
+const Fixed Fixed::operator*(const Fixed& o) const { return Fixed(this->toFloat() * o.toFloat()); }
+const Fixed Fixed::operator/(const Fixed& o) const { return Fixed(this->toFloat() / o.toFloat()); }
+
+Fixed& Fixed::operator++()
+{
+    ++this->raw;
+    return *this;
+}
+
+Fixed& Fixed::operator--()
+{
+    --this->raw;
+	return *this;
+}
+
+const Fixed  Fixed::operator++(int)
+{
+	Fixed temp(*this);
+	++this->raw;
+	return temp;
+}
+
+const Fixed Fixed::operator--(int)
+{
+	Fixed temp(*this);
+	--this->raw;
+	return temp;
+}
