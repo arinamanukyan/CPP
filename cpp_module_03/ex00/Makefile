@@ -6,11 +6,11 @@
 #    By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 20:06:13 by arina             #+#    #+#              #
-#    Updated: 2026/02/25 21:16:56 by arimanuk         ###   ########.fr        #
+#    Updated: 2026/02/26 19:52:23 by arimanuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = orthodox
+NAME = claptrap
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

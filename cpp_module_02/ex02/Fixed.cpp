@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arina <arina@student.42.fr>                +#+  +:+       +#+        */
+/*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 15:53:17 by arina             #+#    #+#             */
-/*   Updated: 2026/02/24 22:10:00 by arina            ###   ########.fr       */
+/*   Updated: 2026/02/26 19:45:48 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Fixed::Fixed(const float value)
 	this->raw = roundf(value * (1 << this->fractional_bits));
 }
 
-Fixed::Fixed(const Fixed& other)
+Fixed::Fixed(const Fixed& other) // dumayu ety sxala
 {
 	this->raw = other.raw;
 }
