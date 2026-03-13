@@ -6,7 +6,7 @@
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 19:21:15 by arimanuk          #+#    #+#             */
-/*   Updated: 2026/02/28 19:48:26 by arimanuk         ###   ########.fr       */
+/*   Updated: 2026/02/28 20:01:51 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,16 @@ ClapTrap::ClapTrap()
 	this->hit_point = 10;
 	this->energy_point = 10;
 	this->attack_damage = 0;
-	std::cout << "Default constructor was called" << std::endl;
+	std::cout << "ClapTrap default constructor was called" << std::endl;
 }
 
-
 ClapTrap::ClapTrap(std::string name) : name(name), hit_point(10), energy_point(10), attack_damage(0)
-{
+{	
 	std::cout << "ClapTrap param constructor was called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
-	std::cout << "ClapTrap copy constructor was called" << std::endl;
 	this->name = other.name;
 	this->attack_damage = other.attack_damage;
 	this->energy_point = other.energy_point;
@@ -38,7 +36,6 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
-	std::cout << "ClapTrap operator= was called" << std::endl;
 	if (this == &other)
 		return *this;
 	this->name = other.name;
@@ -50,6 +47,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 
 std::string ClapTrap::getName() const
 {
+	std::cout << "karum em:" << std::endl;
 	return (this->name);
 }
 

@@ -6,7 +6,7 @@
 /*   By: arina <arina@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 19:21:22 by arimanuk          #+#    #+#             */
-/*   Updated: 2026/03/12 20:12:19 by arina            ###   ########.fr       */
+/*   Updated: 2026/03/12 20:16:13 by arina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string name;
 		int hit_point;
 		int energy_point;
@@ -32,7 +32,7 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		std::string getName() const;
-		~ClapTrap();
+		virtual ~ClapTrap();//virtuali pahy avleacnel
 };
 
 #endif
