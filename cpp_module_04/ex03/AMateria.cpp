@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 20:00:35 by arina             #+#    #+#             */
-/*   Updated: 2026/03/15 19:19:15 by arimanuk         ###   ########.fr       */
+/*   Created: 2026/03/18 20:14:20 by arimanuk          #+#    #+#             */
+/*   Updated: 2026/03/18 20:51:23 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
-#include <iostream>
+#include "AMateria.hpp"
 
-class WrongAnimal
+AMateria::AMateria()
 {
-    protected:
-        std::string type;
+	std::cout << "AMateria default constructor was called" << std::endl;
+}
 
-    public:
-        WrongAnimal();
-        WrongAnimal(const WrongAnimal& other);
-        WrongAnimal& operator=(const WrongAnimal& other);
-        void makeSound();
-        std::string getType() const;
-        virtual ~WrongAnimal();
-};
+std::string const &AMateria::getType() const
+{
+	return (this->type);
+}
 
-#endif
+AMateria::AMateria(std::string const &type)
+{
+	(void)type;
+	std::cout << "Boom" << std::endl;
+}
+
+AMateria::~AMateria()
+{
+	std::cout << "AMateria destructor was called" << std::endl;
+}

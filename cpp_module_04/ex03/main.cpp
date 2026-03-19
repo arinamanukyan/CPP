@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 19:08:26 by arina             #+#    #+#             */
-/*   Updated: 2026/03/15 19:00:14 by arimanuk         ###   ########.fr       */
+/*   Created: 2026/03/18 20:45:04 by arimanuk          #+#    #+#             */
+/*   Updated: 2026/03/18 20:48:39 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
-#include <iostream>
-#define SIZE 10
+#include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
-class Animal
+int main()
 {
-    protected:
-        std::string type;
-
-    public:
-        Animal();
-        Animal(const Animal& other);
-        Animal& operator=(const Animal& other);
-        virtual void makeSound();
-        std::string getType() const;
-        virtual ~Animal();
-};
-
-#endif
+	Ice obj;
+}

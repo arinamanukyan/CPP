@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 19:17:23 by arina             #+#    #+#             */
-/*   Updated: 2026/03/15 19:08:15 by arimanuk         ###   ########.fr       */
+/*   Created: 2026/03/18 20:39:04 by arimanuk          #+#    #+#             */
+/*   Updated: 2026/03/18 21:21:07 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Ice.hpp"
 
-Cat::Cat()
+Ice::Ice() : AMateria("ice")
 {
-    this->type = "Cat";
-    std::cout << "Cat default constructor was called" << std::endl;
+	std::cout << "Ice default constructor was called" << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other) {}
-
-Cat& Cat::operator=(const Cat& other)
+AMateria* Ice::clone() const
 {
-    Animal::operator=(other);
-    return (*this);
+	Ice* copy = new Ice(*this);
+	return copy;
 }
 
-void Cat::makeSound()
+Ice::~Ice()
 {
-    std::cout << "Myauuuuuu" << std::endl;
-}
-
-Cat::~Cat()
-{
-    std::cout << "Cat destructor was called" << std::endl;
+	std::cout << "Ice destructor was called" << std::endl;
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arina <arina@student.42.fr>                +#+  +:+       +#+         #
+#    By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 20:06:13 by arina             #+#    #+#              #
-#    Updated: 2026/03/14 08:42:35 by arina            ###   ########.fr        #
+#    Updated: 2026/03/18 20:47:33 by arimanuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = animal
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

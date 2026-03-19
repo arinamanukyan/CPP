@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimanuk <arimanuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 21:22:54 by arina             #+#    #+#             */
-/*   Updated: 2026/03/15 19:16:28 by arimanuk         ###   ########.fr       */
+/*   Created: 2026/03/18 20:36:28 by arimanuk          #+#    #+#             */
+/*   Updated: 2026/03/18 21:22:15 by arimanuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
-#include <iostream>
+#include "Cure.hpp"
 
-class Brain
+Cure::Cure() : AMateria("cure")
 {
-    private:
-        std::string ideas[100];
+	std::cout << "Cure default contructor was called" << std::endl;
+}
 
-    public:
-        Brain();
-        Brain(const Brain& other);
-        Brain& operator=(const Brain& other);
-        ~Brain();
-};
+AMateria* Cure::clone() const
+{
+	Cure* copy = new Cure(*this);
+		return copy;
+}
 
-#endif
+Cure::~Cure()
+{
+	std::cout << "Cure destructor was called" << std::endl;	
+}
